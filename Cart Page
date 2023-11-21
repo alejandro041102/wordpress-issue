@@ -1,1 +1,22 @@
-
+<script>
+	jQuery(function($) {
+		
+		// Fixed for the main product
+		$('.woocommerce').on('click', '.quantity .plus, .quantity .minus', function() {	
+			var $input = $(this).closest('.quantity').find('input[type="number"]');
+			var currentValue = parseFloat($input.val());		
+			if ($(this).is('.plus')) {
+				$input.val(currentValue + 1);
+			}
+			
+			if (currentValue != '0') {
+				if ($(this).is('.minus')) {
+				$input.val(currentValue - 1);
+			}  			Infinity
+				}
+			$input.trigger('change');
+		});
+		
+	});
+	
+</script>
